@@ -1,6 +1,7 @@
 const {queueProvider} = require('../lib');
 
 
+
 const cookQueue = queueProvider.createQueue('cook');
 const serveQueue = queueProvider.createQueue('serve');
 
@@ -10,7 +11,7 @@ cookQueue.process(3, (job, done) => {
     setTimeout(() => {
         console.log(`🧾 Order ${job.data.orderNo}: ${job.data.dish} ready`);
         done();
-    }, job.data.qty * 1000);
+    }, job.data.qty * 10000);
 });
 
 cookQueue.on('succeeded', (job, result) => {

@@ -1,12 +1,9 @@
 const Queue = require('bee-queue');
+const {dbOptions} = require('./dbProvider');
 
 const options = {
     removeOnSuccess: true,
-    redis: {
-        host: process.env.DB_HOST,
-        port: process.env.DB_PORT,
-        password: process.env.DB_PASS,
-    },
+    redis: dbOptions,
 }
 
 function createQueue(name) {

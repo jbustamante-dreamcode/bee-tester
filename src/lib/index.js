@@ -1,3 +1,4 @@
 module.exports = {
-    queueProvider: require('./queueProvider')
+    queueProvider: require('./queueProvider'),
+    dbProvider: require('./dbProvider')
 };

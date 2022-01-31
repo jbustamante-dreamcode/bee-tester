@@ -1,14 +1,9 @@
-function status(req, res){
-    console.log('llegue a la funcion');
-    res.status(200).json({
-        messages:'orderStatusRoute',
-        uptime: process.uptime(),
-        cpuUsage: process.cpuUsage()
-    })
+const orderStatus= require('../models/orderStatus.model');
+
+
+async function status(req, res){
+    res.status(200).json(await orderStatus.getOrderStatus(req.query.orderId));
 }
 
-function tester() {
-    return "hello";
-}
 
-module.exports = {status, tester};
+module.exports = {status};
