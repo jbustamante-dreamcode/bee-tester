@@ -13,7 +13,12 @@ function newOrder(req, res){
     }else {
         res.status(422);
     }
+    return order;
 
 }
 
-module.exports = {newOrder};
+function tester(numA) {
+    return numA*2;
+}
+
+module.exports = {newOrder, tester};

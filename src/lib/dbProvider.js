@@ -37,15 +37,5 @@ async function hGet(id, property) {
     return response;  
 }
 
-async function getAll() {
-    const client = redis.createClient(dbOptions);
-  
-    client.on('error', (err) => console.log('Redis Client Error', err));
-  
-    await client.connect();
-  
-    let value= await client.hGetAll('USER:1000');
-    return value;  
-}
 
-module.exports ={dbOptions, getAll, hSet, hGet};
+module.exports ={dbOptions, hSet, hGet};

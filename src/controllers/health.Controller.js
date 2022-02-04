@@ -1,3 +1,7 @@
+function add(numA, numB){
+    return numA+numB;
+}
+
 function status(req, res){
     res.status(200).json({
         messages:'ALIVE',
@@ -6,4 +10,4 @@ function status(req, res){
     })
 }
 
-module.exports = {status};
+module.exports = {status, add};
